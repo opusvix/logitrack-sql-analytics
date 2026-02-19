@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "eb913aa01f90732ff971",
+  "name": "c89b218d33ed857c68c6",
   "position": {
-    "x": 1128.5531004989307,
-    "y": 12.77263007840342,
-    "z": 8000,
-    "height": 103.09337134711332,
-    "width": 142.32359230220953,
-    "tabOrder": 8000
+    "x": 23.576826196473551,
+    "y": 12.69521410579345,
+    "z": 10000,
+    "height": 103.37531486146095,
+    "width": 191.33501259445842,
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "image",
@@ -20,7 +20,7 @@
                 "name": {
                   "expr": {
                     "Literal": {
-                      "Value": "'LogoOpusVixReduzido.png'"
+                      "Value": "'caminhao-bau.png'"
                     }
                   }
                 },
@@ -29,7 +29,7 @@
                     "ResourcePackageItem": {
                       "PackageName": "RegisteredResources",
                       "PackageType": 1,
-                      "ItemName": "LogoOpusVixReduzido11550600040741832.png"
+                      "ItemName": "caminhao-bau6275390739835742.png"
                     }
                   }
                 },

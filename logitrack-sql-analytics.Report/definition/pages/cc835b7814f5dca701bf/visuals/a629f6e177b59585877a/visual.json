@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "a629f6e177b59585877a",
   "position": {
-    "x": 774.54014598540141,
-    "y": 127.06569343065694,
+    "x": 934.91183879093194,
+    "y": 126.9521410579345,
     "z": 3000,
-    "height": 441.92700729927009,
-    "width": 496.11678832116786,
+    "height": 441.61209068010072,
+    "width": 335.51637279596974,
     "tabOrder": 3000
   },
   "visual": {
@@ -122,6 +122,20 @@
                   "Value": "true"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "preferredCategoryWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "25D"
+                }
+              }
             }
           }
         }
@@ -146,7 +160,7 @@
             "logAxisScale": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
@@ -197,7 +211,26 @@
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "1000000D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
                 }
               }
             }

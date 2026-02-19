@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "eb913aa01f90732ff971",
+  "name": "56a6c74bc071870397f5",
   "position": {
-    "x": 1128.5531004989307,
-    "y": 12.77263007840342,
-    "z": 8000,
-    "height": 103.09337134711332,
-    "width": 142.32359230220953,
-    "tabOrder": 8000
+    "x": 622.06549118387909,
+    "y": 31.738035264483624,
+    "z": 10001,
+    "height": 55.314861460957175,
+    "width": 56.221662468513848,
+    "tabOrder": 10001
   },
   "visual": {
     "visualType": "image",
@@ -20,7 +20,7 @@
                 "name": {
                   "expr": {
                     "Literal": {
-                      "Value": "'LogoOpusVixReduzido.png'"
+                      "Value": "'filtro.png'"
                     }
                   }
                 },
@@ -29,7 +29,7 @@
                     "ResourcePackageItem": {
                       "PackageName": "RegisteredResources",
                       "PackageType": 1,
-                      "ItemName": "LogoOpusVixReduzido11550600040741832.png"
+                      "ItemName": "filtro8923745738818764.png"
                     }
                   }
                 },

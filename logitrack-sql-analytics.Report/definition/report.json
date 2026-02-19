@@ -56,13 +56,18 @@
       "type": "RegisteredResources",
       "items": [
         {
-          "name": "filtro42831624864861073.png",
-          "path": "filtro42831624864861073.png",
+          "name": "LogoOpusVixReduzido11550600040741832.png",
+          "path": "LogoOpusVixReduzido11550600040741832.png",
           "type": "Image"
         },
         {
-          "name": "LogoOpusVixReduzido11550600040741832.png",
-          "path": "LogoOpusVixReduzido11550600040741832.png",
+          "name": "caminhao-bau6275390739835742.png",
+          "path": "caminhao-bau6275390739835742.png",
+          "type": "Image"
+        },
+        {
+          "name": "filtro8923745738818764.png",
+          "path": "filtro8923745738818764.png",
           "type": "Image"
         }
       ]

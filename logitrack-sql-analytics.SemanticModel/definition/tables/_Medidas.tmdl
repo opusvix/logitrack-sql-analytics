@@ -1,0 +1,71 @@
+table _Medidas
+	lineageTag: 99bb98a8-ce4a-4f27-97c0-026f974308e5
+
+	measure 'Average Ticket' = ```
+			DIVIDE([Total Revenue], [Total Orders])
+			
+			```
+		formatString: "R$ "\ #,0.0;-"R$ "\ #,0.0;"R$ "\ #,0.0
+		lineageTag: 8f8ae8c4-d859-4948-8bae-f05b18443a61
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Cumulative Revenue' = ```
+			
+			CALCULATE(
+			    [Total Revenue],
+			    FILTER(
+			        ALL(vw_orders_analytics[month]),
+			        vw_orders_analytics[month] <= MAX(vw_orders_analytics[month])
+			    )
+			)
+			
+			```
+		formatString: "R$ "\ #,0.0;-"R$ "\ #,0.0;"R$ "\ #,0.0
+		lineageTag: 7ef47a4b-8309-4475-83e2-ee59511cfb5c
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Growth %' = ```
+			
+			VAR PrevRevenue =
+			    CALCULATE(
+			        [Total Revenue],
+			        DATEADD(vw_orders_analytics[month], -1,MONTH)
+			    )
+			RETURN
+			DIVIDE([Total Revenue] - PrevRevenue, PrevRevenue)
+			
+			```
+		lineageTag: b70bddf3-6522-48e0-bb0c-b49173100c7a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Orders' = ```
+			COUNT(vw_orders_analytics[order_id])
+			
+			```
+		formatString: #,0
+		lineageTag: 063130d2-1db7-47bd-b3e5-c58d792ad1b3
+
+	measure 'Total Revenue' = ```
+			SUM(vw_orders_analytics[freight_cost])
+			
+			```
+		formatString: "R$ "\ #,0.00;-"R$ "\ #,0.00;"R$ "\ #,0.00
+		lineageTag: 00c4ae1b-df82-4d6d-9a8d-a139ad75f792
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	partition _Medidas = m
+		mode: import
+		source =
+				let
+				    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Coluna 1" = _t]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"Coluna 1", type text}}),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"Coluna 1"})
+				in
+				    #"Colunas Removidas"
+
+	annotation PBI_ResultType = Table
+

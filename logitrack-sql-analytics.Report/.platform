@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "logitrack-sql-analytics"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "39c40ff4-4999-404b-938a-f51cab611fc8"
+  }
+}

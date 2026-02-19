@@ -1,0 +1,87 @@
+table orders_partitioned
+	lineageTag: 1e0ab4c0-1580-40dd-803b-5040938e7be6
+
+	column order_id
+		dataType: int64
+		formatString: 0
+		lineageTag: abe22afc-ded6-4ad4-a8ae-28d54e710764
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 7901a1ba-d108-489e-804d-cc8819bbea8f
+		summarizeBy: sum
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column warehouse_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 6fcb62f6-1977-409c-9b4c-1a0ab3dbe4db
+		summarizeBy: sum
+		sourceColumn: warehouse_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_id
+		dataType: int64
+		formatString: 0
+		lineageTag: da1f24b1-105f-4315-826a-d71ab7dfa7c5
+		summarizeBy: none
+		sourceColumn: vehicle_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 20a5f3fd-c9ba-4087-81f8-0d19b2201d48
+		summarizeBy: none
+		sourceColumn: order_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column promised_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: eb059464-b1b6-43a6-b238-ff80044e8aa6
+		summarizeBy: none
+		sourceColumn: promised_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivered_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 81105c18-cd08-437f-8638-6bd0966e7ca1
+		summarizeBy: none
+		sourceColumn: delivered_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column freight_cost
+		dataType: double
+		lineageTag: a30b7e23-c3e5-4b55-b69f-7a8463c72982
+		summarizeBy: sum
+		sourceColumn: freight_cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition orders_partitioned = m
+		mode: import
+		source =
+				let
+				    Fonte = PostgreSQL.Database("localhost", "logitrack"),
+				    public_orders_partitioned = Fonte{[Schema="public",Item="orders_partitioned"]}[Data]
+				in
+				    public_orders_partitioned
+
+	annotation PBI_ResultType = Table
+

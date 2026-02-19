@@ -1,0 +1,87 @@
+table orders_default
+	lineageTag: 8f02d218-bb7b-4c8d-b94d-f76cc8915f30
+
+	column order_id
+		dataType: int64
+		formatString: 0
+		lineageTag: b9454bc9-1efa-460f-9d93-f285a2e7a7a2
+		summarizeBy: sum
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		lineageTag: b2bc5708-7ddf-4d72-8ae8-bda9c7b63530
+		summarizeBy: sum
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column warehouse_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e28442e-852a-4a19-b7f5-29b2606fffcd
+		summarizeBy: sum
+		sourceColumn: warehouse_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 12e033f0-99ca-4d99-bbd6-788b2c1d9885
+		summarizeBy: none
+		sourceColumn: vehicle_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 93fbe50d-0d1f-4687-b242-3824d8369b03
+		summarizeBy: none
+		sourceColumn: order_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column promised_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c4e8d6e5-f142-4fac-910f-0e3e0651c00c
+		summarizeBy: none
+		sourceColumn: promised_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivered_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e93a931a-cca9-49cf-91ba-c0329764fac1
+		summarizeBy: none
+		sourceColumn: delivered_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column freight_cost
+		dataType: double
+		lineageTag: d4c0cfab-9ed4-4573-97f6-41f4fbf2a162
+		summarizeBy: sum
+		sourceColumn: freight_cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition orders_default = m
+		mode: import
+		source =
+				let
+				    Fonte = PostgreSQL.Database("localhost", "logitrack"),
+				    public_orders_default = Fonte{[Schema="public",Item="orders_default"]}[Data]
+				in
+				    public_orders_default
+
+	annotation PBI_ResultType = Table
+

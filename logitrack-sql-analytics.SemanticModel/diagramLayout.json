@@ -1,0 +1,107 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 10.353492614444576,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 762.35349261444458,
+            "y": 0
+          },
+          "nodeIndex": "orders_partitioned",
+          "size": {
+            "height": 350,
+            "width": 268
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 776.35349261444458,
+            "y": 456.90993995442625
+          },
+          "nodeIndex": "vw_orders_analytics",
+          "size": {
+            "height": 200,
+            "width": 279
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 371.82077891784667,
+            "y": 0
+          },
+          "nodeIndex": "vehicles",
+          "size": {
+            "height": 188,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 342.95496997721312
+          },
+          "nodeIndex": "orders_2024",
+          "size": {
+            "height": 298,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 323.34142175571628,
+            "y": 349.21695105873755
+          },
+          "nodeIndex": "orders_2025",
+          "size": {
+            "height": 304,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "orders_default",
+          "size": {
+            "height": 294,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 993.35349261444458,
+            "y": 0
+          },
+          "nodeIndex": "_Medidas",
+          "nodeLineageTag": "99bb98a8-ce4a-4f27-97c0-026f974308e5",
+          "size": {
+            "height": 208,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas as tabelas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas as tabelas",
+  "defaultDiagram": "Todas as tabelas"
+}

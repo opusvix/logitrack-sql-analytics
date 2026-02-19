@@ -1,0 +1,62 @@
+table vw_orders_analytics
+	lineageTag: 615c6ee8-5ef5-455a-889b-dfa9cc7b407b
+
+	column order_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 59ec440b-d7ff-4cf6-bdd0-b5fb85b9d494
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_id
+		dataType: int64
+		formatString: 0
+		lineageTag: e934f2f6-08fe-45de-8846-9b5577682e23
+		summarizeBy: sum
+		sourceColumn: vehicle_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 083408ed-6190-49f1-adae-3474213a9229
+		summarizeBy: none
+		sourceColumn: order_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column month
+		dataType: dateTime
+		formatString: yyyy-mm
+		lineageTag: cb8ea43b-0ccc-49c7-b75d-e91c0caedb54
+		summarizeBy: none
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column freight_cost
+		dataType: double
+		lineageTag: 6d4631b5-522c-496a-ad29-1a925e1f56c8
+		summarizeBy: sum
+		sourceColumn: freight_cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition vw_orders_analytics = m
+		mode: import
+		source =
+				let
+				    Fonte = PostgreSQL.Database("localhost", "logitrack"),
+				    public_vw_orders_analytics = Fonte{[Schema="public",Item="vw_orders_analytics"]}[Data]
+				in
+				    public_vw_orders_analytics
+
+	annotation PBI_ResultType = Table
+

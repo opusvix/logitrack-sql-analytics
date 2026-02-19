@@ -1,0 +1,35 @@
+relationship AutoDetected_6d22617e-c1b8-4e74-b282-5049e6167084
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: vw_orders_analytics.order_id
+	toColumn: orders_partitioned.order_id
+
+relationship AutoDetected_7a7d436f-64f4-4a54-bd49-e17a31ce8930
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: vw_orders_analytics.order_id
+	toColumn: orders_2025.order_id
+
+relationship AutoDetected_328bf177-438f-45e4-b95c-bc0de3042172
+	fromColumn: orders_partitioned.vehicle_id
+	toColumn: vehicles.vehicle_id
+
+relationship AutoDetected_064537a4-6181-478f-ba1d-548ce81d1359
+	isActive: false
+	fromColumn: vw_orders_analytics.vehicle_id
+	toColumn: vehicles.vehicle_id
+
+relationship AutoDetected_f5bb45b0-8081-4848-bbde-2e89c5d69d61
+	isActive: false
+	fromColumn: orders_2025.vehicle_id
+	toColumn: vehicles.vehicle_id
+
+relationship AutoDetected_b436c68d-8b89-4b88-a213-a4aca916f406
+	fromColumn: orders_default.vehicle_id
+	toColumn: vehicles.vehicle_id
+
+relationship 2710e2a7-0dd0-c2ca-cec9-317ba249d77a
+	isActive: false
+	fromColumn: orders_2024.vehicle_id
+	toColumn: vehicles.vehicle_id
+

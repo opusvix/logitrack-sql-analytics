@@ -1,0 +1,50 @@
+table vehicles
+	lineageTag: f99eeb36-f480-41e2-8707-8533755bf597
+
+	column vehicle_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f55cd2e-655b-419e-8ddf-b8608a58e84d
+		summarizeBy: none
+		sourceColumn: vehicle_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column type
+		dataType: string
+		lineageTag: e74eaa25-e28f-4914-a72d-e99b2088774a
+		summarizeBy: none
+		sourceColumn: type
+
+		annotation SummarizationSetBy = Automatic
+
+	column capacity_kg
+		dataType: int64
+		formatString: 0
+		lineageTag: 307c176d-7c71-4995-aeb5-23d64fcfe7c6
+		summarizeBy: sum
+		sourceColumn: capacity_kg
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_per_km
+		dataType: double
+		lineageTag: 7b744883-beb8-4191-ba8e-b1bc2e4321a5
+		summarizeBy: sum
+		sourceColumn: cost_per_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition vehicles = m
+		mode: import
+		source =
+				let
+				    Fonte = PostgreSQL.Database("localhost", "logitrack"),
+				    public_vehicles = Fonte{[Schema="public",Item="vehicles"]}[Data]
+				in
+				    public_vehicles
+
+	annotation PBI_ResultType = Table
+

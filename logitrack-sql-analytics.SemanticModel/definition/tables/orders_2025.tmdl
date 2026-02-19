@@ -1,0 +1,87 @@
+table orders_2025
+	lineageTag: 3ae3aa15-e958-425e-a584-f2c1da2e324b
+
+	column order_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 5887132e-5468-4b78-89ab-865273534b0d
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 75762e0c-37d7-4254-ab95-667ddcac022b
+		summarizeBy: sum
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column warehouse_id
+		dataType: int64
+		formatString: 0
+		lineageTag: ef9525e8-3072-450e-9854-4c9f4b605e88
+		summarizeBy: sum
+		sourceColumn: warehouse_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_id
+		dataType: int64
+		formatString: 0
+		lineageTag: ba973f23-9710-49ef-9061-074646cd9334
+		summarizeBy: sum
+		sourceColumn: vehicle_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e8272ada-e179-4b0e-a030-444556b52d54
+		summarizeBy: none
+		sourceColumn: order_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column promised_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 080e9f31-a19f-4e6e-91f8-62b4633a510e
+		summarizeBy: none
+		sourceColumn: promised_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivered_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e3c727cd-bd1b-403b-b445-1b8b7ae913f5
+		summarizeBy: none
+		sourceColumn: delivered_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column freight_cost
+		dataType: double
+		lineageTag: 727910d2-d177-44d0-bd33-8a1621ee6ef2
+		summarizeBy: sum
+		sourceColumn: freight_cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition orders_2025 = m
+		mode: import
+		source =
+				let
+				    Fonte = PostgreSQL.Database("localhost", "logitrack"),
+				    public_orders_2025 = Fonte{[Schema="public",Item="orders_2025"]}[Data]
+				in
+				    public_orders_2025
+
+	annotation PBI_ResultType = Table
+

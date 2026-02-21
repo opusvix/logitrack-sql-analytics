@@ -19,6 +19,7 @@ ref table orders_2024
 ref table orders_2025
 ref table orders_default
 ref table _Medidas
+ref table Calendario
 
 ref cultureInfo pt-BR
 

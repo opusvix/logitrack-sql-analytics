@@ -23,20 +23,6 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Total Revenue"
-                }
-              },
-              "queryRef": "_Medidas.Total Revenue",
-              "nativeQueryRef": "Total Revenue"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
                   "Property": "Total Orders"
                 }
               },
@@ -51,11 +37,39 @@
                       "Entity": "_Medidas"
                     }
                   },
+                  "Property": "Total Revenue"
+                }
+              },
+              "queryRef": "_Medidas.Total Revenue",
+              "nativeQueryRef": "Total Revenue"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
                   "Property": "Average Ticket"
                 }
               },
               "queryRef": "_Medidas.Average Ticket",
               "nativeQueryRef": "Average Ticket"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Growth %"
+                }
+              },
+              "queryRef": "_Medidas.Crescimento %",
+              "nativeQueryRef": "Crescimento %"
             }
           ]
         }
@@ -70,7 +84,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Total Revenue"
+                "Property": "Total Orders"
               }
             },
             "direction": "Descending"
@@ -241,7 +255,7 @@
             "columnCount": {
               "expr": {
                 "Literal": {
-                  "Value": "3L"
+                  "Value": "4L"
                 }
               }
             },

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "21e4d3f6a29dfb04c79a",
   "position": {
-    "x": 935.13898788310757,
-    "y": 577.50534568781177,
+    "x": 934.91183879093194,
+    "y": 426.19647355163727,
     "z": 4000,
-    "height": 142.32359230220953,
-    "width": 335.73770491803276,
+    "height": 293.80352644836267,
+    "width": 335.51637279596974,
     "tabOrder": 4000
   },
   "visual": {
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "vehicles.vehicle_id",
-              "nativeQueryRef": "vehicle_id"
+              "nativeQueryRef": "Vehicle_id",
+              "displayName": "Vehicle_id"
             },
             {
               "field": {
@@ -200,7 +201,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "69D"
+                  "Value": "78.06800910574114D"
                 }
               }
             }
@@ -214,7 +215,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "150D"
+                  "Value": "144.55919261630012D"
                 }
               }
             }

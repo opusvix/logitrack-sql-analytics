@@ -26,7 +26,7 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
-	measure 'Growth %' = ```
+	measure 'Growth %' =
 			
 			VAR PrevRevenue =
 			    CALCULATE(
@@ -35,11 +35,8 @@ table _Medidas
 			    )
 			RETURN
 			DIVIDE([Total Revenue] - PrevRevenue, PrevRevenue)
-			
-			```
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: b70bddf3-6522-48e0-bb0c-b49173100c7a
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Total Orders' = ```
 			COUNT(vw_orders_analytics[order_id])

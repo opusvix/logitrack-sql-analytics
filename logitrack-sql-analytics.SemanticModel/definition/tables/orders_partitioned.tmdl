@@ -32,7 +32,7 @@ table orders_partitioned
 		dataType: int64
 		formatString: 0
 		lineageTag: da1f24b1-105f-4315-826a-d71ab7dfa7c5
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: vehicle_id
 
 		annotation SummarizationSetBy = Automatic

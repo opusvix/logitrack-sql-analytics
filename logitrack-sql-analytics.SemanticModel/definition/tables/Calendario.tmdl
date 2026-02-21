@@ -1,0 +1,67 @@
+table Calendario
+	lineageTag: 20d3561f-2960-4af4-ab5b-6f69118e984b
+
+	column Date
+		formatString: General Date
+		lineageTag: a634d6aa-3979-4343-b8f9-8e04c2c29be3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ano
+		formatString: 0
+		lineageTag: 0766e419-330e-436d-9e5e-bc7615b15e2c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Ano]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		lineageTag: a56ccc9a-d02c-462a-a472-647ec4fe614f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Mes]
+		sortByColumn: MesNumero
+
+		annotation SummarizationSetBy = Automatic
+
+	column MesNumero
+		formatString: 0
+		lineageTag: 9de007c3-0e08-47c5-b6c1-d9a747a1846d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [MesNumero]
+
+		annotation SummarizationSetBy = Automatic
+
+	column AnoMes
+		dataType: dateTime
+		formatString: yyyy-mm
+		lineageTag: 70e191be-4649-43ac-bf31-dad34cd290cc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [AnoMes]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	partition Calendario = calculated
+		mode: import
+		source =
+				
+				ADDCOLUMNS(
+				    CALENDAR(MIN(orders_partitioned[order_date]), MAX(orders_partitioned[order_date])),
+				    "Ano", YEAR([Date]),
+				    "Mes", FORMAT([Date], "MMM"),
+				    "MesNumero", MONTH([Date]),
+				    "AnoMes", FORMAT([Date], "YYYY-MM")
+				)
+
+	annotation PBI_Id = 1e984117731c4cd2aa4ea6f99c20b1cf
+

@@ -5,7 +5,7 @@ table orders_2025
 		dataType: int64
 		formatString: 0
 		lineageTag: 5887132e-5468-4b78-89ab-865273534b0d
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: order_id
 
 		annotation SummarizationSetBy = Automatic

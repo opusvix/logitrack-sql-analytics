@@ -22,7 +22,7 @@ table vehicles
 		dataType: int64
 		formatString: 0
 		lineageTag: 307c176d-7c71-4995-aeb5-23d64fcfe7c6
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: capacity_kg
 
 		annotation SummarizationSetBy = Automatic
@@ -30,7 +30,7 @@ table vehicles
 	column cost_per_km
 		dataType: double
 		lineageTag: 7b744883-beb8-4191-ba8e-b1bc2e4321a5
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: cost_per_km
 
 		annotation SummarizationSetBy = Automatic

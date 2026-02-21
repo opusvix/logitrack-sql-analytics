@@ -14,14 +14,14 @@ table vw_orders_analytics
 		dataType: int64
 		formatString: 0
 		lineageTag: e934f2f6-08fe-45de-8846-9b5577682e23
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: vehicle_id
 
 		annotation SummarizationSetBy = Automatic
 
 	column order_date
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		lineageTag: 083408ed-6190-49f1-adae-3474213a9229
 		summarizeBy: none
 		sourceColumn: order_date

@@ -1,3 +1,7 @@
+<p align="right">
+  <a href="README.pt-BR.md">🇧🇷 Versão em Português</a>
+</p>
+
 # 🚀 LogiTrack Analytics – Data Engineering & BI Project
 
 ## 📌 Overview
